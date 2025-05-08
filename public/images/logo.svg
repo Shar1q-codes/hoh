@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="60" rx="8" fill="#0D2B36"/>
+  <text x="100" y="35" font-family="Arial" font-size="32" font-weight="bold" fill="#FF6B6B" text-anchor="middle">HOH</text>
+</svg> 

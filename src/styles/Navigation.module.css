@@ -1,0 +1,145 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: var(--transition);
+}
+
+.scrolled {
+  background: rgba(30, 39, 46, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menuButton {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.menuButton div {
+  width: 30px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.desktopMenu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.desktopLink {
+  color: var(--light);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.desktopLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.desktopLink:hover::after,
+.desktopLink.active::after {
+  width: 80%;
+}
+
+.desktopLink.active {
+  color: var(--primary);
+}
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--darker);
+  padding: 6rem 2rem 2rem;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileLink {
+  color: var(--light);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  transition: var(--transition);
+  width: 100%;
+  text-align: center;
+}
+
+.mobileLink.active {
+  background: var(--gradient-primary);
+  color: var(--light);
+}
+
+@media (max-width: 768px) {
+  .desktopMenu {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    width: 100px;
+    height: 35px;
+  }
+} 

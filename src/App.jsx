@@ -1,45 +1,49 @@
-import { useState } from "react";
-import Loader from "./components/Loader";
-import Intro from "./components/Intro";
-import HeroSection from "./components/HeroSection";
-import SectionWhat from "./components/SectionWhat";
-import SectionWhy from "./components/SectionWhy";
+import React, { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import HeroSection from './components/HeroSection';
+import SectionWhy from './components/SectionWhy';
+import SectionJury from './components/SectionJury';
+import SectionAdvisory from './components/SectionAdvisory';
+import SectionGuests from './components/SectionGuests';
+import SectionSponsors from './components/SectionSponsors';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import Loader from './components/Loader';
+import './App.css';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(false);
-  const [doneIntro, setDoneIntro] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <>
-      {!showIntro ? (
-        <Loader onComplete={() => setShowIntro(true)} />
-      ) : !doneIntro ? (
-        <Intro onComplete={() => setDoneIntro(true)} />
-      ) : (
-        <>
-          <HeroSection />
-          <SectionWhat />
-          <SectionWhy />
-          <div
-            style={{
-              height: "120vh",
-              background: "linear-gradient(120deg, #024950 80%, #003135 100%)",
-              color: "#fff",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "2.2rem",
-              letterSpacing: "-1px",
-              fontWeight: 700,
-              boxShadow: "0 -8px 32px #00313544 inset",
-              borderTop: "2px solid #0fa4af22",
-            }}
-          >
-            Next Section
-          </div>
-        </>
-      )}
-    </>
+    <div className="App">
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <Loader key="loader" />
+        ) : (
+          <>
+            <Navigation />
+            <main>
+              <HeroSection />
+              <SectionWhy />
+              <SectionJury />
+              <SectionAdvisory />
+              <SectionGuests />
+              <SectionSponsors />
+            </main>
+            <Footer />
+          </>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
