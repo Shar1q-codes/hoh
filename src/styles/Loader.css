@@ -1,0 +1,27 @@
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-bar {
+  height: 3px;
+  background-color: #afdde5;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.loader-text {
+  margin-top: 12px;
+  color: #afdde5;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
