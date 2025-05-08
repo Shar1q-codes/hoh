@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" fill="#0D2B36"/>
-  <text x="100" y="100" font-family="Arial" font-size="24" fill="#4ECDC4" text-anchor="middle">Sponsor 1</text>
+  <rect width="200" height="200" fill="#000022"/>
+  <rect x="10" y="10" width="180" height="180" fill="#000033" stroke="#00FF00" stroke-width="4"/>
+  <text x="100" y="100" font-family="'Press Start 2P', monospace" font-size="16" fill="#00FF00" text-anchor="middle" filter="url(#glow)">SPONSOR</text>
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 </svg> 
