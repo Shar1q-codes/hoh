@@ -6,13 +6,14 @@ const SectionWhat = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start center", "end start"],
+    offset: ["start end", "end start"],
   });
 
-  const scatterY = useTransform(scrollYProgress, [0.5, 1], [0, -80]);
-  const scatterOpacity = useTransform(scrollYProgress, [0.5, 1], [1, 0]);
+  const scatterY = useTransform(scrollYProgress, [0.2, 1], [0, -100]);
+  const scatterOpacity = useTransform(scrollYProgress, [0.2, 1], [1, 0]);
 
-  const content = `Heroes of Hyderabad is TOT Awards’ tribute to real impact. This isn't about TRPs, red carpets, or celebrity selfies. It’s about the real deal — 🚀 Entrepreneurs 💡 Innovators 🛡️ Social warriors 🏥 Health heroes 🎨 Cultural torchbearers …who shape Hyderabad’s tomorrow, today.`;
+  const content =
+    "Heroes of Hyderabad is TOT Awards’ tribute to real impact. This isn't about TRPs, red carpets, or celebrity selfies. It’s about the real deal — 🚀 Entrepreneurs 💡 Innovators 🛡️ Social warriors 🏥 Health heroes 🎨 Cultural torchbearers …who shape Hyderabad’s tomorrow, today.";
 
   return (
     <section className="section-what" ref={sectionRef}>

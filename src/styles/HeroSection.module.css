@@ -1,0 +1,96 @@
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  width: 100%;
+  padding: 6rem 10%;
+  background: linear-gradient(120deg, #003135 80%, #024950 100%);
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.heroText {
+  flex: 1;
+  color: #afdde5;
+  z-index: 2;
+  font-family: "Poppins", sans-serif;
+  padding-right: 2rem;
+  max-width: 600px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.heroText h1 {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  color: #0fa4af;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 32px rgba(15,164,175,0.12);
+  transform: translateZ(0);
+}
+
+.heroText p {
+  font-size: 1.25rem;
+  color: #afdde5;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 0;
+  transform: translateZ(0);
+}
+
+.heroImage {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  filter: drop-shadow(0 8px 40px #024950) drop-shadow(0 0 8px #0fa4af44);
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: filter 0.3s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .heroContainer {
+    flex-direction: column;
+    padding: 4rem 6%;
+    text-align: center;
+    overflow: visible;
+  }
+  .heroText {
+    padding: 0;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+  .heroText h1 {
+    font-size: 2.2rem;
+  }
+  .heroText p {
+    font-size: 1.05rem;
+  }
+  .heroImage {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroContainer {
+    padding: 2.5rem 2vw 2rem 2vw;
+  }
+  .heroText h1 {
+    font-size: 1.3rem;
+  }
+  .heroText p {
+    font-size: 0.95rem;
+  }
+} 

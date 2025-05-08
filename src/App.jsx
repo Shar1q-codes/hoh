@@ -3,6 +3,7 @@ import Loader from "./components/Loader";
 import Intro from "./components/Intro";
 import HeroSection from "./components/HeroSection";
 import SectionWhat from "./components/SectionWhat";
+import SectionWhy from "./components/SectionWhy";
 
 function App() {
   const [showIntro, setShowIntro] = useState(false);
@@ -18,15 +19,20 @@ function App() {
         <>
           <HeroSection />
           <SectionWhat />
+          <SectionWhy />
           <div
             style={{
-              height: "100vh",
-              backgroundColor: "#024950",
+              height: "120vh",
+              background: "linear-gradient(120deg, #024950 80%, #003135 100%)",
               color: "#fff",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              fontSize: "2rem",
+              fontSize: "2.2rem",
+              letterSpacing: "-1px",
+              fontWeight: 700,
+              boxShadow: "0 -8px 32px #00313544 inset",
+              borderTop: "2px solid #0fa4af22",
             }}
           >
             Next Section

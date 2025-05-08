@@ -1,0 +1,208 @@
+.sectionWhy {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #003135 0%, #024950 100%);
+  overflow: hidden;
+  padding: 6rem 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(15, 164, 175, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.textContent {
+  max-width: 800px;
+  margin-bottom: 6rem;
+}
+
+.textContent h2 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #0fa4af;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 32px rgba(15, 164, 175, 0.12);
+}
+
+.textContent p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #afdde5;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.timelineContainer {
+  position: relative;
+  height: 200px;
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0fa4af 0%, transparent 100%);
+  transform: translateY(-50%);
+}
+
+.timelineItem {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  background: #0fa4af;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(15, 164, 175, 0.5);
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.year {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0fa4af;
+}
+
+.achievement {
+  font-size: 0.9rem;
+  color: #afdde5;
+  max-width: 150px;
+}
+
+.facesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.face {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0fa4af 0%, #024950 100%);
+  box-shadow: 0 8px 32px rgba(15, 164, 175, 0.2);
+  transform: translate(-50%, -50%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sectionWhy {
+    padding: 4rem 6%;
+  }
+
+  .textContent h2 {
+    font-size: 2.5rem;
+  }
+
+  .textContent p {
+    font-size: 1.1rem;
+  }
+
+  .timelineContainer {
+    height: 300px;
+  }
+
+  .face {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionWhy {
+    padding: 3rem 4%;
+  }
+
+  .textContent h2 {
+    font-size: 2rem;
+  }
+
+  .textContent p {
+    font-size: 1rem;
+  }
+
+  .timelineContainer {
+    height: 400px;
+  }
+
+  .timelineItem {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .face {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionWhy {
+    padding: 2rem 3%;
+  }
+
+  .textContent h2 {
+    font-size: 1.8rem;
+  }
+
+  .timelineContainer {
+    height: 500px;
+  }
+
+  .timelineItem {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  .face {
+    width: 60px;
+    height: 60px;
+  }
+} 
